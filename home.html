@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">ExpenseTracker</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#analytics">Analytics</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to ExpenseTracker</h1>
+            <p>Take control of your finances with our easy-to-use expense management system</p>
+        </div>
+    </section>
+
+    <section id="dashboard" class="dashboard">
+        <h2>Financial Overview</h2>
+        <div class="summary-cards">
+            <div class="card">
+                <i class="fas fa-wallet"></i>
+                <h3>Total Income</h3>
+                <p id="totalIncome">$0.00</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-money-bill-wave"></i>
+                <h3>Total Expenses</h3>
+                <p id="totalExpenses">$0.00</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-piggy-bank"></i>
+                <h3>Balance</h3>
+                <p id="balance">$0.00</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="analytics" class="analytics">
+        <h2>Transaction Analytics</h2>
+        <div class="upload-container">
+            <div class="upload-box">
+                <i class="fas fa-file-upload"></i>
+                <h3>Upload Google Pay Statement</h3>
+                <p>Upload your CSV file to analyze transactions</p>
+                <input type="file" id="csvFileInput" accept=".csv" />
+                <button id="uploadBtn">Process Transactions</button>
+            </div>
+        </div>
+        
+        <div class="charts-container">
+            <div class="chart-box">
+                <h3>Monthly Expenditure</h3>
+                <canvas id="monthlyChart"></canvas>
+            </div>
+            <div class="chart-box">
+                <h3>Category Distribution</h3>
+                <canvas id="categoryChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add before closing body tag -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    <footer>
+        <p>&copy; 2024 ExpenseTracker. All rights reserved.</p>
+    </footer>
+</body>
+</html>
