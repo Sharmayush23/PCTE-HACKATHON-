@@ -156,6 +156,8 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+    height: auto;
+    min-height: 400px;
 }
 
 .chart-box {
@@ -163,17 +165,44 @@ body {
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: relative;
+    height: 400px;
+    width: 100%;
+}
+
+.chart-box canvas {
+    width: 100% !important;
+    height: 100% !important;
 }
 
 .chart-box h3 {
     margin-bottom: 1rem;
     text-align: center;
     color: #2c3e50;
+    position: relative;
+    z-index: 1;
 }
 
+/* Dark theme adjustments for charts */
+.dark-theme .chart-box {
+    background-color: #1e1e1e;
+    border: 1px solid #2a2a2a;
+}
+
+.dark-theme .chart-box h3 {
+    color: #e0e0e0;
+}
+
+/* Responsive adjustments for charts */
 @media (max-width: 768px) {
     .charts-container {
         grid-template-columns: 1fr;
+        min-height: 800px; /* Accommodate both charts */
+    }
+
+    .chart-box {
+        height: 350px;
+        margin-bottom: 1rem;
     }
 }
 
@@ -266,4 +295,67 @@ footer {
     .card, .category-card {
         margin: 1rem;
     }
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    color: #00e5cc;
+}
+
+/* Dark Theme Styles */
+.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-theme .navbar {
+    background-color: #1e1e1e;
+}
+
+.dark-theme .card,
+.dark-theme .chart-box,
+.dark-theme .upload-box,
+.dark-theme .category-card {
+    background-color: #1e1e1e;
+    border: 1px solid #2a2a2a;
+}
+
+.dark-theme .card i {
+    color: #00e5cc;
+}
+
+.dark-theme .upload-box input[type="file"] {
+    border-color: #00e5cc;
+    color: #e0e0e0;
+}
+
+.dark-theme .upload-box button,
+.dark-theme .expense-form button {
+    background-color: #00e5cc;
+    color: #121212;
+}
+
+.dark-theme .upload-box button:hover,
+.dark-theme .expense-form button:hover {
+    background-color: #00b3a1;
+}
+
+.dark-theme .expense-form input {
+    background-color: #1e1e1e;
+    border-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+.dark-theme footer {
+    background-color: #1e1e1e;
 }
