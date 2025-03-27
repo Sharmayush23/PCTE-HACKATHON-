@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Manager</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="wallet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -134,8 +135,68 @@
                 // (Copy the content from goals.js here)
             });
         </script>
+        
+        </section>
+        
+        <!-- Digital Wallet Section -->
+        <section id="wallet" class="wallet-section">
+            <h2>Digital Wallet</h2>
+            <div class="wallet-container">
+                <div class="wallet-balance">
+                    <h3>Wallet Balance</h3>
+                    <p id="walletBalance">₹0.00</p>
+                    <button id="addMoneyBtn" class="primary-btn">Add Money</button>
+                </div>
+                
+                <div class="payment-form">
+                    <h3>Make Payment</h3>
+                    <form id="paymentForm">
+                        <input type="text" id="receiverUPI" placeholder="Enter UPI ID" required>
+                        <input type="number" id="paymentAmount" placeholder="Amount (₹)" required>
+                        <select id="paymentCategory" required>
+                            <option value="">Select Category</option>
+                            <option value="food">Food & Dining</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="transportation">Transportation</option>
+                            <option value="utilities">Utilities</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="education">Education</option>
+                            <option value="rent">Rent & Housing</option>
+                            <option value="investment">Investment</option>
+                            <option value="others">Others</option>
+                        </select>
+                        <button type="submit" class="primary-btn">Pay Now</button>
+                    </form>
+                </div>
+                <div class="recent-transactions">
+                    <h3>Recent Transactions</h3>
+                    <div id="transactionsList" class="transactions-list"></div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Add Money Modal -->
+        <div id="addMoneyModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h3>Add Money to Wallet</h3>
+                <form id="addMoneyForm">
+                    <input type="number" id="addAmount" placeholder="Enter Amount (₹)" required>
+                    <select id="paymentMethod" required>
+                        <option value="">Select Payment Method</option>
+                        <option value="debit">Debit Card</option>
+                        <option value="credit">Credit Card</option>
+                        <option value="netbanking">Net Banking</option>
+                    </select>
+                    <button type="submit" class="primary-btn">Add Money</button>
+                </form>
+            </div>
+        </div>
+    
         <footer>
             <p>&copy; 2024 ExpenseTracker. All rights reserved.</p>
         </footer>
+        <script src="wallet.js"></script>
 </body>
 </html>
